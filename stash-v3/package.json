@@ -1,0 +1,14 @@
+{
+  "name": "stash-noliktava",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "setup": "node setup.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  }
+}
