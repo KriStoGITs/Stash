@@ -1,0 +1,467 @@
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #253044;
+  background: #f7f8fa;
+  --accent: #285ea8;
+  --border: #e2e6ec;
+  --muted: #667085;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
+
+/* Navigation stays quiet; the current section is the only blue item. */
+aside {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 224px;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 16px 18px;
+  background: #fff;
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0 12px 28px;
+  font-size: 23px;
+  font-weight: 750;
+  letter-spacing: -0.8px;
+  color: #253044;
+}
+nav {
+  display: grid;
+  gap: 4px;
+}
+nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 10px 12px;
+  border-radius: 5px;
+  color: #526074;
+  font-weight: 500;
+  text-decoration: none;
+}
+nav a:hover {
+  background: #f5f6f8;
+  color: #253044;
+}
+nav a[aria-current] {
+  background: #edf3fc;
+  color: var(--accent);
+  font-weight: 600;
+}
+.identity {
+  margin-top: auto;
+  padding: 24px 12px 0;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.identity small {
+  display: block;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.identity form {
+  margin: 12px 0 0;
+}
+.identity button {
+  background: transparent;
+  color: var(--muted);
+  padding: 4px 0;
+  min-height: 32px;
+  font-size: 13px;
+}
+.identity button:hover {
+  color: #253044;
+  background: transparent;
+  text-decoration: underline;
+}
+
+/* One content column, with generous space around ordinary forms. */
+main {
+  margin-left: 224px;
+  max-width: 1440px;
+  padding: 36px 40px;
+}
+header {
+  margin-bottom: 24px;
+}
+h1 {
+  margin: 0;
+  font-size: 27px;
+  line-height: 1.25;
+  font-weight: 650;
+  letter-spacing: -0.6px;
+}
+h2 {
+  margin: 28px 0 16px;
+  font-size: 18px;
+  font-weight: 600;
+}
+p {
+  margin: 0 0 20px;
+}
+main > p,
+form > p {
+  color: var(--muted);
+}
+section {
+  margin: 24px 0;
+}
+section h2 {
+  margin-top: 0;
+}
+form {
+  margin: 24px 0;
+}
+main > form[action$='/save'] {
+  max-width: 640px;
+}
+label {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 14px;
+  font-weight: 500;
+}
+input,
+select {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  min-height: 42px;
+  margin-top: 6px;
+  padding: 9px 11px;
+  border: 1px solid #cbd2dc;
+  border-radius: 5px;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+}
+input:hover,
+select:hover {
+  border-color: #9aa8bb;
+}
+input[type='checkbox'] {
+  display: inline-block;
+  width: auto;
+  min-height: auto;
+  margin: 0 6px 0 0;
+  accent-color: var(--accent);
+}
+button,
+.button {
+  display: inline-block;
+  min-height: 40px;
+  padding: 9px 16px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: var(--accent);
+  color: white;
+  font: inherit;
+  font-weight: 500;
+  line-height: 1.4;
+  text-decoration: none;
+  cursor: pointer;
+}
+button:hover,
+.button:hover {
+  background: #204d8b;
+}
+.button.secondary {
+  border-color: var(--border);
+  background: #fff;
+  color: #344054;
+}
+.button.secondary:hover {
+  background: #f0f2f5;
+}
+.actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0;
+}
+form[method='get'] {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+form[method='get'] label {
+  flex: 1 1 240px;
+  max-width: 420px;
+  margin: 0;
+}
+
+/* Tables use row separators instead of a frame around every action. */
+.table {
+  margin: 20px 0;
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+th,
+td {
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+th {
+  background: #fafbfc;
+  color: #526074;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+tbody tr:hover {
+  background: #fcfcfd;
+}
+td {
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+.table form {
+  margin: 10px 0 0;
+  padding: 0;
+}
+.table label {
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.table button {
+  min-height: 32px;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+.table form[action$='/delete'] button {
+  background: #fff;
+  color: #a53232;
+  border-color: #e8cccc;
+}
+.table form[action$='/delete'] button:hover {
+  background: #fff4f4;
+}
+.table input[type='number'] {
+  min-width: 80px;
+  width: 100px;
+  margin: 0;
+}
+.table select {
+  min-width: 130px;
+  min-height: 34px;
+  padding: 6px 9px;
+  margin: 0 0 8px;
+  font-size: 13px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.stats section {
+  margin: 0;
+  padding: 20px 22px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+}
+.stats span {
+  font-size: 13px;
+  color: var(--muted);
+}
+.stats strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.8px;
+}
+.error {
+  padding: 14px 16px;
+  border-left: 3px solid #b13d3d;
+  background: #fff1f1;
+  color: #9a2e2e;
+}
+footer {
+  margin-top: 48px;
+  font-size: 12px;
+  color: var(--muted);
+}
+small {
+  font-size: 12px;
+}
+code {
+  padding: 2px 5px;
+  border-radius: 3px;
+  background: #edf0f4;
+}
+.login {
+  margin: 10vh auto;
+  padding: 28px;
+  max-width: 440px;
+}
+.login form {
+  margin-top: 24px;
+}
+.login button {
+  width: 100%;
+}
+:focus-visible {
+  outline: 3px solid #6f9ddd;
+  outline-offset: 3px;
+}
+
+@media (max-width: 760px) {
+  aside {
+    position: static;
+    width: 100%;
+    padding: 18px 20px;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .brand {
+    padding: 0 0 14px;
+    font-size: 21px;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  nav a {
+    padding: 9px 10px;
+    font-size: 14px;
+  }
+  .identity {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    padding: 16px 0 0;
+  }
+  .identity small {
+    margin: 0;
+  }
+  .identity form {
+    margin: 0 0 0 auto;
+  }
+  main {
+    margin-left: 0;
+    padding: 26px 20px;
+  }
+  h1 {
+    font-size: 25px;
+  }
+  .stats {
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+  .stats section {
+    padding: 16px;
+  }
+  th,
+  td {
+    padding: 11px 12px;
+  }
+  .login {
+    margin: 5vh auto;
+    padding: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a,
+  button,
+  input,
+  select {
+    transition:
+      background-color 0.12s,
+      border-color 0.12s,
+      color 0.12s;
+  }
+}
+
+.table form[action$='/delete'] {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.table form[action$='/delete'] label {
+  margin: 0;
+}
+
+/* Symbols follow the surrounding text instead of using a fixed pixel size. */
+.icon {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  vertical-align: -0.125em;
+}
+.button:has(.button-symbol) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+}
+.button-symbol {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  font: inherit;
+  line-height: 1;
+  flex-shrink: 0;
+}
+input[type='checkbox'] {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+}
+
+/* Also match SVGs from pages rendered before the server was restarted. */
+nav a > span:first-child:has(svg) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 1em;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+}
+nav a svg,
+.brand svg {
+  display: block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+}
